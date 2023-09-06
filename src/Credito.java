@@ -7,5 +7,24 @@ public class Credito extends Conta {
         this.limite = limite;
     }
 
+    @Override
+    public String menu(){
 
+        return """
+                [1] - Pagar no Crédito.
+                [2] - Mostrar Saldo Devedor.
+                [3] - Sair da Conta.
+                """ ;
+    }
+
+
+
+    @Override
+    public String toString() {
+        return "Credito{" +
+                "diaFatura=" + diaFatura +
+                ", limite=" + limite +
+                ", "+ super.toString()+
+                '}';
+    }
 }

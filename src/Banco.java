@@ -25,10 +25,19 @@ public class Banco {
         return nome;
     }
 
+    public ArrayList<Conta> getContas() {
+        return contas;
+    }
+
 //================================================================================================================================================================
 
     public void cadastrarConta(){
-        
+        Conta kaique = new Corrente(1,1335,0,"k",new Fisica("Condominio",624797363,"Kaique Fernandes"),10000);
+        Conta ana = new Poupanca(2,3000,1,"a", new Pessoa("Centro"));
+        Conta otavio = new Credito(3,0,0,"o",new Pessoa("Rua são januário"),19, 100000);
+        this.contas.add(kaique);
+        this.contas.add(ana);
+        this.contas.add(otavio);
     }
 
 
