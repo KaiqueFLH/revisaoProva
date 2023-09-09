@@ -40,12 +40,36 @@ public class Main {
                 }
             } else {
                 switch (indice) {
-                    case 1 -> manipulaPagamento();//pagamento diferente no crédito, implementar lógica em casa. Falta pouca coisa.
+                    case 1 -> manipulaPagamentoCredito();//pagamento diferente no crédito, implementar lógica em casa. Falta pouca coisa.
                     case 2 -> System.out.println("O valor que virá na sua fatura do mês que vem é: " + logado.saldo());
                     case 3 -> logado.saldo();
                 }
             }
         } while (true);
+    }
+
+    public static void manipulaPagamentoCredito() {
+        System.out.println("Informe o dia da fatura:");
+        int diaFatura = sc.nextInt();
+
+        System.out.println("Informe o Valor do seu Pagamento:");
+        double valor = sc.nextDouble();
+
+        System.out.println(logado.pagamento(valor, diaFatura));
+        simulaDiasPassando(diaFatura);
+    }
+
+    public static void simulaDiasPassando(int diaFatura) {
+        int i=0;
+
+        for(; i < diaFatura; i++) {
+            System.out.println("Dia " + i);
+        }
+        if (i==diaFatura){
+            logado.setSaldo(0);
+            System.out.println("Sua fatura foi Paga, seu saldo devedor é de: " + logado.saldo());
+        }
+
     }
 
     private static void manipulaPagamento() {

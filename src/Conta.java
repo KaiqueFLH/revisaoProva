@@ -24,9 +24,18 @@ public class Conta {
     public String pagamento(double valor) {
         if (this.saldo>=valor){
             this.saldo-=valor;
+            return "Pagamento realizado com Sucesso.";
         }
-        return "Pagamento realizado com Sucesso.";
+        return "Seu saldo atual é insuficiente para completar a transação.";
     }
+
+    public String pagamento(double valor,int diaFatura) {
+        this.setSaldo(this.saldo() + valor);
+
+        return "Pagamento realizado com Sucesso. Seu Saldo devedor é de: " + this.saldo();
+    }
+
+
 
     public String credito(double valor) {
         this.saldo+= valor;
